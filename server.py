@@ -27,6 +27,8 @@ def extract(mail: str) -> dict[str, any]:
             response['day'] = None
         elif "None" in response['day'] : 
             response['day'] = None
+        elif len(response['day'].split("-") ) != 3 :
+            response['day'] = None
     
     except:
         response = {"day": None, "start": None, "end": None, "title": None}
