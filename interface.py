@@ -2,8 +2,7 @@ from streamlit_calendar import calendar
 import streamlit as st
 import datetime
 from server import extract
-
-
+import pytz
 
 st.set_page_config(page_title="Mehmet Bey'in Takvimi", page_icon="📅")
 st.title("Mehmet Bey'in Takvimi")    
@@ -17,8 +16,11 @@ if "events" not in st.session_state:
 
 st.info("Hoş geldiniz. Bu demoda Mehmet Bey' in asistanı olucaksınız. Mehmet Bey'in maillerini demoya girerek bir gün takvimini ayarlayın.", icon="ℹ️")
 
+# set turkey zone 
 
-today = datetime.date.today()
+
+
+today = datetime.date.today(pytz.timezone('Europe/Istanbul')).strftime("%Y-%m-%d")
 
 calendar_options = {
     "editable": "true",
@@ -65,7 +67,7 @@ col1, col2 = st.columns([1, 2])
 flag = True
 with col1:
     st.header("Mail Asistanı") 
-    prompt = st.text_area(label = "Mail")
+    prompt = st.text_area(label = "Mail", height=400)
     button = st.button("Gönder")
 
     if button:
