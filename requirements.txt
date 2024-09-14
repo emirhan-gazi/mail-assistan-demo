@@ -2,4 +2,4 @@ streamlit
 openai
 python-dotenv
 streamlit_calendar
-yaml
+pyyaml
