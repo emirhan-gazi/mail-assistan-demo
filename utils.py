@@ -70,7 +70,6 @@ def extract_info_from_mail(mail: str, client: OpenAI | AzureOpenAI, prompts: dic
     )
     response = completion.choices[0].message.content
     try :
-
         extract_flag = int(response.split("\n")[0])
     except:
         return {"day": None, "start": None, "end": None, "title": None}

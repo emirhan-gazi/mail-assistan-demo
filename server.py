@@ -23,7 +23,6 @@ def extract(mail: str) -> dict[str, any]:
 
     try: 
         response = extract_info_from_mail(mail,openai_client,prompts)
-
         if response['day'] == None :
             response['day'] = None
         elif "None" in response['day'] : 
