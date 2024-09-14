@@ -65,7 +65,7 @@ col1, col2 = st.columns([1, 2])
 flag = True
 with col1:
     st.header("Mail Asistanı") 
-    prompt = st.text_area(label = "Mail", height=400)
+    prompt = st.text_input(label = "Mail")
 
 
     if prompt:
