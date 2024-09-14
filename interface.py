@@ -18,10 +18,7 @@ st.info("Hoş geldiniz. Bu demoda Mehmet Bey' in asistanı olucaksınız. Mehmet
 
 # set turkey zone 
 
-TIMEZONE = pytz.timezone('Turkey')
-
-
-today = datetime.date.today(tz=TIMEZONE)
+today = datetime.datetime.now(tz=pytz.timezone('Europe/Istanbul')).strftime("%Y-%m-%d")
 calendar_options = {
     "editable": "true",
     "selectable": "true",
