@@ -65,10 +65,10 @@ col1, col2 = st.columns([1, 2])
 flag = True
 with col1:
     st.header("Mail Asistanı") 
-    prompt = st.text_input(label = "Mail")
+    prompt = st.text_area(label = "Mail")
+    button = st.button("Gönder")
 
-
-    if prompt:
+    if button:
         response = extract(prompt)
         day = response['day']
         if day == None : 
